@@ -96,18 +96,15 @@ function getResults(res) {
 }
 
 function showAnswer(res) {
-    var result = "failure";
+    var result = "code failure";
     var myCode = document.getElementById('code')
     var oldClass = myCode.className;
     //myCode.innerHTML = "<strong>" + myAnswer.value + "</strong>";
     myCode.innerHTML = myAnswer.value;
     if (res) {
-        result = "success";
+        result = "code success";
     }
-    console.log("class to add " + result);
-    myCode.classList.add(result);
-    console.log("index failure : " + code.className.indexOf(' failure') );
-    console.log("index success: " + code.className.indexOf(' success') );
+    myCode.className = result;
 }
 
 function showReplay() {
@@ -117,9 +114,5 @@ function showReplay() {
     if ('none' === replayDiv.style.display) {
         guessDiv.style.display = 'none';
         replayDiv.style.display = 'block';
-    }
-    else {
-        guessDiv.style.display = 'block';
-        replayDiv.style.display = 'none';         
     }
 }
